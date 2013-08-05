@@ -1,0 +1,95 @@
+Conjunto de servicios que puedes hacer al servidor:
+
+- lista de usuarios:
+Operacion:
+{
+    "action":"users-list",
+    "data":""
+}
+Respuesta: 
+{
+    "action":"users-list",
+    "data":[
+        {
+            "id":"123123",
+            "nick":"asdf",
+            "status":"playing"
+        },
+        {
+            "id":"123123",
+            "nick":"asdf",
+            "status":"waiting"
+        },
+        {
+            "id":"123123",
+            "nick":"asdf",
+            "status":"waiting"
+        },
+    ]
+}
+- cambiar de nombre del usuario
+Operacion:
+{
+    "action":"user-nick",
+    "data":"carlos"
+}
+- desafiar a otro usuario:
+Operacion:
+{
+    "action":"user-challenge",
+    "data":"123123"
+}
+- aceptar desafio de un usuario:
+Operacion:
+{
+    "action":"user-accept",
+    "data":"123123"
+}
+
+- operaciones sobre la lista:
+
+- conexion exitosa:
+Respuesta:
+{
+    "action":"connect",
+    "data":"true"
+}
+
+- nuevo usuario:
+Respuesta:
+{
+    "action":"user-new",
+    "data":{
+        "id":"123123",
+        "nick":"asdf",
+        "status":"waiting"
+    }
+}
+- usuario salio del sistema:
+Respuesta:
+{
+    "action":"user-delete",
+    "data":"123123"
+}
+- cambio de nick
+Operacion:
+{
+    "action":"user-nick",
+    "data": {
+        "id":"123123",
+        "nick":"carlos",
+        "status":"waiting"
+    }
+}
+- nuevo desafio de parte de otro usuario:
+Respuesta:
+{
+    "action":"user-challenge",
+    "data":"123123"
+}
+- aceptar el desafio que un usuario propuso:
+Respuesta:
+{
+    "action":"user-accept",
+    "data":"123123"
+}
